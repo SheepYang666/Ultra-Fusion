@@ -135,7 +135,7 @@ Inside the container, download and install the release package:
 wget -O /tmp/ultrafusion.deb \
   http://47.100.60.229:8088/loc_map/releases/ultrafusion/ultrafusion_0.1.0_amd64.deb
 
-echo "6ae9f67be8e7cbf21186ffd815d9a3ce17d1fc9b0089e92a49fc870631b33205  /tmp/ultrafusion.deb" | sha256sum -c -
+echo "32400edd7df49a1cbfb80b65becf562a9d6e33eb06b3607c9bec7b4b1b70da4a  /tmp/ultrafusion.deb" | sha256sum -c -
 
 dpkg -i /tmp/ultrafusion.deb
 ```
@@ -174,25 +174,27 @@ uf_node m3dgr_01
 uf_node m3dgr_02
 ```
 
-M3DGR public shortcuts:
+M3DGR public release profiles:
 
 | Command | Config | Recommended benchmark setting |
 | --- | --- | --- |
-| `uf_node m3dgr_01` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_01.yaml` | M3DGR benchmark setting 01 |
-| `uf_node m3dgr_02` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_02.yaml` | M3DGR benchmark setting 02 |
+| `uf_node m3dgr_01` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_01.yaml` | M3DGR general wheeled LVWIO profile: Dynamic01, Varying-illu01, Dark01, and Occlusion01 |
+| `uf_node m3dgr_02` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_02.yaml` | M3DGR long-horizon / visually degraded LVIO profile: Corridor01, GNSS-denial, Longtime01, and Longtime02 |
 
 `uf_node m3dgr` is kept as a short alias for `m3dgr_02`.
 
 ### Other Released Configs
 
-These additional public shortcuts are also included for reproducibility:
+These additional public shortcuts are also included for reproducibility. The
+table lists the sequences/settings covered by the released configs; other
+sequences may require parameter retuning.
 
-| Command | Config | Recommended benchmark setting |
+| Command | Config | Recommended sequences/settings |
 | --- | --- | --- |
-| `uf_node m2p` | `config/m2p/uf_m2p.yaml` | M2DGR-Plus paper benchmark setting |
-| `uf_node lvig` | `config/lvig/uf_lvig.yaml` | MARS-LVIG released sequences |
-| `uf_node kaist` | `config/kaist/uf_kaist.yaml` | KAIST paper benchmark setting |
-| `uf_node groundtour` | `config/groundtour/uf_groundtour.yaml` | GrandTour paper benchmark setting |
+| `uf_node m2p` | `/opt/ultrafusion/config/m2p/uf_m2p.yaml` | M2DGR-Plus bridge1-style LVWIO setting |
+| `uf_node lvig` | `/opt/ultrafusion/config/lvig/uf_lvig.yaml` | MARS-LVIG HKairport01-style LVIO setting |
+| `uf_node kaist` | `/opt/ultrafusion/config/kaist/uf_kaist.yaml` | KAIST urban25 and urban35 |
+| `uf_node groundtour` | `/opt/ultrafusion/config/groundtour/uf_groundtour.yaml` | GrandTour SPX-2, SNOW-2, and EIG-1 |
 
 You can also pass a config path directly:
 

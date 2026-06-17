@@ -107,7 +107,7 @@ ARG BUILD_JOBS=4
 RUN git clone --branch "${CERES_VERSION}" --depth 1 https://github.com/ceres-solver/ceres-solver.git /tmp/ceres \
   && cmake -S /tmp/ceres -B /tmp/ceres/build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_CXX_FLAGS_RELEASE="-O2 -DNDEBUG" \
+    -DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG" \
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_TESTING=OFF \
@@ -116,7 +116,7 @@ RUN git clone --branch "${CERES_VERSION}" --depth 1 https://github.com/ceres-sol
   && git clone --branch "${YAML_CPP_VERSION}" --depth 1 https://github.com/jbeder/yaml-cpp.git /tmp/yaml-cpp \
   && cmake -S /tmp/yaml-cpp -B /tmp/yaml-cpp/build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_CXX_FLAGS_RELEASE="-O2 -DNDEBUG" \
+    -DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG" \
     -DBUILD_SHARED_LIBS=ON \
     -DYAML_CPP_BUILD_CONTRIB=OFF \
     -DYAML_CPP_BUILD_TESTS=OFF \
