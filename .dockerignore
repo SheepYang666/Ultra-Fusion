@@ -1,0 +1,11 @@
+.git
+.github
+*.deb
+*.tar
+*.tar.gz
+build
+dist
+devel
+logs
+tmp
+*.bag

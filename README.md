@@ -88,24 +88,116 @@ Across these datasets, the paper reports competitive localization performance an
 
 ## Quick Start
 
-> Build and run scripts will be released/updated in this repository.
+The public runtime is tested on Ubuntu 20.04 + ROS Noetic. The Docker image is
+only the ROS/runtime environment: it contains ROS Noetic, rosbag, RViz, Ceres,
+yaml-cpp, and the required system libraries. It does not contain the
+Ultra-Fusion source tree or the release `.deb`.
 
-### Dependencies
+### Pull the Docker Image
 
-- Ubuntu + ROS (recommended)
-- Ceres, Eigen, Sophus, PCL
-- Multi-sensor inputs (camera / IMU / LiDAR / wheel / GNSS as available)
-
-### Build
+Alibaba Cloud ACR:
 
 ```bash
-# TODO: provide official setup scripts for Ultra-Fusion release
+docker pull registry.cn-hangzhou.aliyuncs.com/bit_robot_image/ultrafusion:0.1.0
 ```
 
-### Run
+Docker Hub:
 
 ```bash
-# TODO: provide launch commands and sample configs
+docker pull maotiandocker/ultrafusion:0.1.0
+```
+
+Or build the public runtime image from the Dockerfile:
+
+```bash
+docker build -t ultrafusion:0.1.0 .
+```
+
+### Install the Release Deb
+
+Start a container. The `/media` mount is optional, but convenient when rosbag
+files are stored on the host under `/media`.
+
+```bash
+xhost +local:docker
+
+docker run --rm -it --net=host --ipc=host \
+  -e DISPLAY="${DISPLAY}" \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -v /media:/media:ro \
+  maotiandocker/ultrafusion:0.1.0
+```
+
+Inside the container, download and install the release package:
+
+```bash
+wget -O /tmp/ultrafusion.deb \
+  http://47.100.60.229:8088/loc_map/releases/ultrafusion/ultrafusion_0.1.0_amd64.deb
+
+echo "6ae9f67be8e7cbf21186ffd815d9a3ce17d1fc9b0089e92a49fc870631b33205  /tmp/ultrafusion.deb" | sha256sum -c -
+
+dpkg -i /tmp/ultrafusion.deb
+```
+
+The deb installs:
+
+- `/opt/ultrafusion/bin/uf_node`
+- `/usr/bin/uf-node` and `/usr/bin/uf_node`
+- `/opt/ultrafusion/config/m3dgr`
+- `/opt/ultrafusion/config/m2p`
+- `/opt/ultrafusion/config/lvig`
+- `/opt/ultrafusion/config/kaist`
+- `/opt/ultrafusion/config/groundtour`
+- `/opt/ultrafusion/rviz/lio.rviz`
+
+Open the included RViz layout with:
+
+```bash
+rviz -d /opt/ultrafusion/rviz/lio.rviz
+```
+
+### Run M3DGR
+
+Start ROS and play your bag in the usual ROS way. Use one terminal for
+`roscore`, one terminal for `rosbag play`, and one terminal for `uf_node`.
+
+```bash
+roscore &
+rosbag play /media/path/to/your.bag --clock
+```
+
+Run Ultra-Fusion in another shell:
+
+```bash
+uf_node m3dgr_01
+uf_node m3dgr_02
+```
+
+M3DGR public shortcuts:
+
+| Command | Config | Recommended benchmark setting |
+| --- | --- | --- |
+| `uf_node m3dgr_01` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_01.yaml` | M3DGR benchmark setting 01 |
+| `uf_node m3dgr_02` | `/opt/ultrafusion/config/m3dgr/uf_m3dgr_02.yaml` | M3DGR benchmark setting 02 |
+
+`uf_node m3dgr` is kept as a short alias for `m3dgr_02`.
+
+### Other Released Configs
+
+These additional public shortcuts are also included for reproducibility:
+
+| Command | Config | Recommended benchmark setting |
+| --- | --- | --- |
+| `uf_node m2p` | `config/m2p/uf_m2p.yaml` | M2DGR-Plus paper benchmark setting |
+| `uf_node lvig` | `config/lvig/uf_lvig.yaml` | MARS-LVIG released sequences |
+| `uf_node kaist` | `config/kaist/uf_kaist.yaml` | KAIST paper benchmark setting |
+| `uf_node groundtour` | `config/groundtour/uf_groundtour.yaml` | GrandTour paper benchmark setting |
+
+You can also pass a config path directly:
+
+```bash
+uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_01.yaml
 ```
 
 ---
