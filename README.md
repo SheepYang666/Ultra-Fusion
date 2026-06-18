@@ -50,22 +50,6 @@ Compared with conventional fusion pipelines that are heavily tied to a fixed sen
 
 ---
 
-## Qualitative Results
-
-### Robustness Under Degradation
-
-<p align="center">
-  <img src="images/degradation_qualitative.png" alt="Qualitative robustness under sensor degradation" width="88%">
-</p>
-<p align="center"><em>Representative stress cases: challenging perception conditions with consistent trajectory and map quality.</em></p>
-
-### Cross-Platform Results
-
-<p align="center">
-  <img src="images/trajs.png" alt="Trajectories across ground, legged, and aerial platforms" width="88%">
-</p>
-<p align="center"><em>Trajectory estimation examples on ground, legged, and UAV datasets.</em></p>
-
 
 
 ## Benchmarks and Findings
@@ -204,15 +188,23 @@ uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_01.yaml
 
 ---
 
-## Datasets
+## Qualitative Results
 
-- [M3DGR](https://github.com/sjtuyinjie/M3DGR)
-- [M2DGR-Plus](https://github.com/sjtuyinjie/M2DGR-plus)
-- [MARS-LVIG](https://mars.hku.hk/dataset.html)
-- [KAIST Complex Urban Dataset](https://sites.google.com/view/complex-urban-dataset)
-- [GrandTour](https://github.com/leggedrobotics/grand_tour_dataset)
+### Robustness Under Degradation
 
-More benchmark links and sequence-level setup instructions will be added with the release package.
+<p align="center">
+  <img src="images/degradation_qualitative.png" alt="Qualitative robustness under sensor degradation" width="88%">
+</p>
+<p align="center"><em>Representative stress cases: challenging perception conditions with consistent trajectory and map quality.</em></p>
+
+### Cross-Platform Results
+
+<p align="center">
+  <img src="images/trajs.png" alt="Trajectories across ground, legged, and aerial platforms" width="88%">
+</p>
+<p align="center"><em>Trajectory estimation examples on ground, legged, and UAV datasets.</em></p>
+
+
 
 ---
 
