@@ -70,14 +70,14 @@ Across these datasets, the paper reports competitive localization performance an
 
 ---
 
-## Quick Start
+## ⚙️1. Prerequisites & Installation
 
 The public runtime is tested on Ubuntu 20.04 + ROS Noetic. The Docker image is
 only the ROS/runtime environment: it contains ROS Noetic, rosbag, RViz, Ceres,
 yaml-cpp, and the required system libraries. It does not contain the
 Ultra-Fusion source tree or the release `.deb`.
 
-### Pull the Docker Image for Environments
+### 1.1 Pull the Docker Image for Environments
 
 
 
@@ -92,7 +92,7 @@ docker pull maotiandocker/ultrafusion:0.1.0
 docker build -t ultrafusion:0.1.0 .
 ```
 
-### Install the Release Deb of Ultra-Fusion
+### 1.2 Install the Release Deb of Ultra-Fusion
 
 Start a container. The `/media` mount is optional, but convenient when rosbag
 files are stored on the host under `/media`.
@@ -140,8 +140,8 @@ Open the included RViz layout with:
 ```bash
 rviz -d /opt/ultrafusion/rviz/lio.rviz
 ```
-
-### 🔥Run Ultra-Fusion on M3DGR
+## 🔥2 Run Ultra-Fusion
+### 🔥2.1 Run Ultra-Fusion on M3DGR
 Download [**M3DGR**](https://github.com/sjtuyinjie/M3DGR) bags and give a star.
 Start ROS and play your bag in the usual ROS way. Use one terminal for
 `roscore`, one terminal for `rosbag play`, and one terminal for `uf_node`.
@@ -176,7 +176,7 @@ M3DGR public release profiles:
 `uf_node m3dgr_standard`. Legacy aliases `uf_node m3dgr_01` and
 `uf_node m3dgr_02` are still supported for backward compatibility.
 
-## 🔥Run Ultra-Fusion on more datasets
+### 🔥2.2 Run Ultra-Fusion on more datasets
 
 These additional public shortcuts are included for reproducibility. The table
 lists the dataset sequences/settings covered by the released profiles. Sequences
@@ -198,16 +198,16 @@ uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 
 ---
 
-## Qualitative Results
+## 3. Qualitative Results
 
-### Robustness Under Degradation
+### 3.1 Robustness Under Degradation
 
 <p align="center">
   <img src="images/degradation_qualitative.png" alt="Qualitative robustness under sensor degradation" width="88%">
 </p>
 <p align="center"><em>Representative stress cases: challenging perception conditions with consistent trajectory and map quality.</em></p>
 
-### Cross-Platform Results
+### 3.2 Cross-Platform Results
 
 <p align="center">
   <img src="images/trajs.png" alt="Trajectories across ground, legged, and aerial platforms" width="88%">
@@ -220,7 +220,7 @@ uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 
 ---
 
-## License
+## 4. License
 
 This project is licensed under the MIT License. If you find this project useful, please cite:
 
