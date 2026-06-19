@@ -3,10 +3,16 @@
 <div align="center">
 
 [![Website](https://img.shields.io/badge/Website-Ultra--Fusion-blue)](https://sjtuyinjie.github.io/ultrafusion-web/)
+[![Dataset](https://img.shields.io/badge/Dataset-M3DGR-red)](https://github.com/sjtuyinjie/M3DGR)
 [![Platform](https://img.shields.io/badge/Platforms-Ground%20%7C%20Legged%20%7C%20Aerial-green)](#cross-platform-results)
 [![License](https://img.shields.io/badge/License-MIT-orange)](#license)
 
 </div>
+
+**Core contributors:** Yihong Tian, Junjie Zhang, Liuyang Li, and Jie Yin*
+
+---
+
 
 Ultra-Fusion is a tightly-coupled multi-sensor SLAM/localization framework for intelligent transportation systems (ITS).
 It is designed for real deployment where sensor degradation (illumination changes, LiDAR degeneracy, wheel slippage, GNSS outage) and spatiotemporal miscalibration are common.
