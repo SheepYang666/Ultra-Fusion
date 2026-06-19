@@ -216,11 +216,13 @@ uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 
 
 
+
+
 ---
 
-## Citation
+## License
 
-If you find this project useful, please cite:
+This project is licensed under the MIT License. If you find this project useful, please cite:
 
 ```bibtex
 @article{zhang2025towards,
@@ -230,9 +232,3 @@ If you find this project useful, please cite:
   year={2025}
 }
 ```
-
----
-
-## License
-
-This project is licensed under the MIT License.
