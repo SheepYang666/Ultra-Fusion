@@ -9,7 +9,7 @@
 
 </div>
 
-**Core contributors:** Yihong Tian, Junjie Zhang, Liuyang Li, and Jie Yin*
+**Core contributors:** [Yihong Tian](https://github.com/maotian123), [Junjie Zhang](https://github.com/Zjj587), [Liuyang Li](https://github.com/Lurvelly), and [Jie Yin](https://sjtuyinjie.github.io/)*
 
 ---
 
@@ -23,8 +23,8 @@ The system unifies WIO, VIO, LIO, and LVIO in one configurable optimization fram
 > We currently release executable binaries and demos. Full source code will be released after paper acceptance.
 
 ---
-
-## Highlights
+## Overview
+### Highlights
 
 - Unified sliding-window estimator with timestamp-ordered heterogeneous factors.
 - Observability-aware initialization for robust bootstrap under diverse motion/sensor conditions.
@@ -34,7 +34,7 @@ The system unifies WIO, VIO, LIO, and LVIO in one configurable optimization fram
 
 ---
 
-## Method Overview
+### Method Overview
 
 Ultra-Fusion converts asynchronous sensor streams into optional factors in one optimization window, with shared state representation, marginalization, and calibration logic.
 
@@ -45,7 +45,7 @@ Ultra-Fusion converts asynchronous sensor streams into optional factors in one o
 
 ---
 
-## Why Ultra-Fusion
+### Why Ultra-Fusion
 
 Compared with conventional fusion pipelines that are heavily tied to a fixed sensor set, Ultra-Fusion emphasizes:
 
@@ -58,7 +58,7 @@ Compared with conventional fusion pipelines that are heavily tied to a fixed sen
 
 
 
-## Benchmarks and Findings
+### Benchmarks and Findings
 
 Ultra-Fusion is evaluated on:
 
