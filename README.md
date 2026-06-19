@@ -4,8 +4,9 @@
 
 [![Website](https://img.shields.io/badge/Website-Ultra--Fusion-blue)](https://sjtuyinjie.github.io/ultrafusion-web/)
 [![Dataset](https://img.shields.io/badge/Dataset-M3DGR-red)](https://github.com/sjtuyinjie/M3DGR)
-[![Platform](https://img.shields.io/badge/Platforms-Ground%20%7C%20Legged%20%7C%20Aerial-green)](#cross-platform-results)
 [![License](https://img.shields.io/badge/License-MIT-orange)](#license)
+[![Platform](https://img.shields.io/badge/Platforms-Ground%20%7C%20Legged%20%7C%20Aerial-green)](#cross-platform-results)
+
 
 </div>
 
