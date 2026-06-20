@@ -33,8 +33,8 @@ The system unifies WIO, VIO, LIO, and LVIO in one configurable optimization fram
 - Online LiDAR-IMU spatiotemporal calibration during operation.
 - Validated on wheeled, legged, and aerial platforms across multiple public benchmarks.
 
-Go to our [project website](https://sjtuyinjie.github.io/ultrafusion-web/) for more details!
----
+**Go to our [project website](https://sjtuyinjie.github.io/ultrafusion-web/) for more details!**
+
 
 ### Method Overview
 
@@ -77,6 +77,8 @@ Across these datasets, the paper reports competitive localization performance an
 - long-duration and high-speed operation.
 
 ---
+
+
 
 ## ⚙️1. Prerequisites & Installation
 
