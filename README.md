@@ -195,17 +195,23 @@ you should see live LiDAR mapping and trajectory overlays similar to:
     <td width="33%" align="center">
       <img src="images/gifs/corridor_full.gif" alt="M3DGR Corridor demo" width="100%">
       <br>
-      <em>Corridor01 — <code>uf_node m3dgr_image_enhance</code></em>
+      <strong>Corridor01</strong> · <code>uf_node m3dgr_image_enhance</code>
+      <br>
+      <em>Stable localization in a visually constrained indoor corridor.</em>
     </td>
     <td width="33%" align="center">
       <img src="images/gifs/gnss_denial_full.gif" alt="M3DGR GNSS-denial demo" width="100%">
       <br>
-      <em>GNSS-denial01 — <code>uf_node m3dgr_image_enhance</code></em>
+      <strong>GNSS-denial01</strong> · <code>uf_node m3dgr_image_enhance</code>
+      <br>
+      <em>Continuous estimation when GNSS measurements are unavailable.</em>
     </td>
     <td width="33%" align="center">
       <img src="images/gifs/longtime02_full.gif" alt="M3DGR Longtime02 demo" width="100%">
       <br>
-      <em>Longtime02 — <code>uf_node m3dgr_image_enhance</code></em>
+      <strong>Longtime02</strong> · <code>uf_node m3dgr_image_enhance</code>
+      <br>
+      <em>Long-duration operation with consistent map and path alignment.</em>
     </td>
   </tr>
 </table>
@@ -239,17 +245,23 @@ recommended sequence, and compare your RViz output with:
     <td width="33%" align="center">
       <img src="images/gifs/arc2_full.gif" alt="GrandTour Arc2 demo" width="100%">
       <br>
-      <em>GrandTour Arc2 — <code>uf_node groundtour</code></em>
+      <strong>GrandTour Arc2</strong> · <code>uf_node groundtour</code>
+      <br>
+      <em>Legged-platform mapping and trajectory recovery through a large arc-shaped route.</em>
     </td>
     <td width="33%" align="center">
       <img src="images/gifs/kaist_full.gif" alt="KAIST urban driving demo" width="100%">
       <br>
-      <em>KAIST urban25/35 — <code>uf_node kaist</code></em>
+      <strong>KAIST urban25/35</strong> · <code>uf_node kaist</code>
+      <br>
+      <em>Large-scale LiDAR mapping with vehicle trajectory visualization.</em>
     </td>
     <td width="33%" align="center">
       <img src="images/gifs/lvig_full.gif" alt="MARS-LVIG aerial demo" width="100%">
       <br>
-      <em>MARS-LVIG HKairport01 — <code>uf_node lvig</code></em>
+      <strong>MARS-LVIG HKairport01</strong> · <code>uf_node lvig</code>
+      <br>
+      <em>Aerial LVIO reconstruction with dense point cloud and flight trajectory.</em>
     </td>
   </tr>
 </table>
