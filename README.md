@@ -197,7 +197,7 @@ you should see live LiDAR mapping and trajectory overlays similar to:
       <br>
       <strong>Corridor01</strong> · <code>uf_node m3dgr_image_enhance</code>
       <br>
-      <em>Stable localization in a visually constrained indoor corridor.</em>
+      <em>Stable localization in an indoor corridor under vision challenge and LiDAR degeneration.</em>
     </td>
     <td width="33%" align="center">
       <img src="images/gifs/gnss_denial_full.gif" alt="M3DGR GNSS-denial demo" width="100%">
