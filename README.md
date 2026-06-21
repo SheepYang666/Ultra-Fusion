@@ -186,6 +186,30 @@ M3DGR public release profiles:
 `uf_node m3dgr_standard`. Legacy aliases `uf_node m3dgr_01` and
 `uf_node m3dgr_02` are still supported for backward compatibility.
 
+**Demo preview (M3DGR).** After launching `uf_node` with the profile above and
+playing the corresponding M3DGR bag in RViz (`/opt/ultrafusion/rviz/lio.rviz`),
+you should see live LiDAR mapping and trajectory overlays similar to:
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/gifs/corridor_full.gif" alt="M3DGR Corridor demo" width="100%">
+      <br>
+      <em>Corridor01 — <code>uf_node m3dgr_image_enhance</code></em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/gnss_denial_full.gif" alt="M3DGR GNSS-denial demo" width="100%">
+      <br>
+      <em>GNSS-denial01 — <code>uf_node m3dgr_image_enhance</code></em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/longtime02_full.gif" alt="M3DGR Longtime02 demo" width="100%">
+      <br>
+      <em>Longtime02 — <code>uf_node m3dgr_image_enhance</code></em>
+    </td>
+  </tr>
+</table>
+
 ### 🔥2.2 Run Ultra-Fusion on more datasets
 
 These additional public shortcuts are included for reproducibility. The table
@@ -206,6 +230,33 @@ You can also pass a config path directly:
 uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 ```
 
+**Demo preview (other datasets).** The GIFs below match the released shortcuts
+in the table above. Run the corresponding `uf_node` command, play the
+recommended sequence, and compare your RViz output with:
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/gifs/arc2_full.gif" alt="GrandTour Arc2 demo" width="100%">
+      <br>
+      <em>GrandTour Arc2 — <code>uf_node groundtour</code></em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/kaist_full.gif" alt="KAIST urban driving demo" width="100%">
+      <br>
+      <em>KAIST urban25/35 — <code>uf_node kaist</code></em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/lvig_full.gif" alt="MARS-LVIG aerial demo" width="100%">
+      <br>
+      <em>MARS-LVIG HKairport01 — <code>uf_node lvig</code></em>
+    </td>
+  </tr>
+</table>
+
+> M2DGR-Plus (`uf_node m2p`) is included in the release profiles above; a
+> dedicated demo GIF will be added in a later update.
+
 ---
 
 ## 3. Qualitative Results
@@ -224,50 +275,8 @@ uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 </p>
 <p align="center"><em>Trajectory estimation examples on ground, legged, and UAV datasets.</em></p>
 
-### 3.3 Dynamic Demo Results
-
-The following GIFs show representative full-scene reconstructions with the
-current LiDAR cloud and estimated trajectory overlaid during playback.
-
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <img src="images/gifs/arc2_full.gif" alt="GrandTour Arc2 full-scene demo" width="100%">
-      <br>
-      <em>GrandTour Arc2: legged-platform mapping and trajectory recovery through a large arc-shaped route.</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="images/gifs/corridor_full.gif" alt="M3DGR Corridor full-scene demo" width="100%">
-      <br>
-      <em>M3DGR Corridor: stable localization in a visually constrained indoor corridor.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <img src="images/gifs/gnss_denial_full.gif" alt="M3DGR GNSS-denial full-scene demo" width="100%">
-      <br>
-      <em>M3DGR GNSS-denial: continuous estimation when GNSS measurements are unavailable.</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="images/gifs/kaist_full.gif" alt="KAIST full-scene demo" width="100%">
-      <br>
-      <em>KAIST urban driving: large-scale LiDAR mapping with vehicle trajectory visualization.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <img src="images/gifs/longtime02_full.gif" alt="M3DGR Longtime02 full-scene demo" width="100%">
-      <br>
-      <em>M3DGR Longtime02: long-duration operation with consistent map and path alignment.</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="images/gifs/lvig_full.gif" alt="MARS-LVIG full-scene demo" width="100%">
-      <br>
-      <em>MARS-LVIG: aerial LVIO reconstruction with dense point cloud and flight trajectory.</em>
-    </td>
-  </tr>
-</table>
-
+> For full-scene playback demos (LiDAR cloud + trajectory in RViz), see
+> **Demo preview** under **§2.1** (M3DGR) and **§2.2** (other datasets) above.
 
 ---
 
