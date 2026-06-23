@@ -78,7 +78,7 @@ Across these datasets, the paper reports competitive localization performance an
 
 
 > [!NOTE]
-> We currently release executable binaries and demos. Full source code will be released **after paper acceptance**. And we will update the arxiv link of this project in a few days. Please refer to our prior works [Ground-Fusion](https://github.com/SJTU-ViSYS/Ground-Fusion) and [Ground-Fusion++](https://github.com/sjtuyinjie/Ground-Fusion2) for implementation reference.
+> We currently release executable binaries and demos. Full source code will be released **after paper acceptance**. Please refer to our prior works [Ground-Fusion](https://github.com/SJTU-ViSYS/Ground-Fusion) and [Ground-Fusion++](https://github.com/sjtuyinjie/Ground-Fusion2) for implementation reference.
 
 ---
 
