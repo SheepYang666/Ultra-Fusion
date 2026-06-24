@@ -235,6 +235,36 @@ You can also pass a config path directly:
 uf_node /opt/ultrafusion/config/m3dgr/uf_m3dgr_standard.yaml
 ```
 
+**Demo preview (more datasets).** The GIFs below match the released shortcuts
+in the table above. Run the corresponding `uf_node` command, play the
+recommended sequence, and compare your RViz output with:
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/gifs/arc2_full.gif" alt="GrandTour Arc2 demo" width="100%">
+      <br>
+      <strong>GrandTour Arc2</strong> · <code>uf_node groundtour</code>
+      <br>
+      <em>Legged-platform mapping and trajectory recovery through a large arc-shaped route.</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/kaist_full.gif" alt="KAIST urban driving demo" width="100%">
+      <br>
+      <strong>KAIST urban25/35</strong> · <code>uf_node kaist</code>
+      <br>
+      <em>Large-scale LiDAR mapping with vehicle trajectory visualization.</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/gifs/lvig_full.gif" alt="MARS-LVIG aerial demo" width="100%">
+      <br>
+      <strong>MARS-LVIG HKairport01</strong> · <code>uf_node lvig</code>
+      <br>
+      <em>Aerial LVIO reconstruction with dense point cloud and flight trajectory.</em>
+    </td>
+  </tr>
+</table>
+
 ### 2.3 Custom profiles: modes, GNSS, extrinsics, and delays
 
 The released commands above are aliases for YAML files under
@@ -261,7 +291,7 @@ rosbag play /media/path/to/your.bag --clock
 `uf_node` reads the YAML only at startup. Restart `uf_node` after changing the
 copied config.
 
-#### Fusion mode switches
+#### 2.3.1 Fusion mode switches
 
 Keep `imu: 1` for the modes below. Visual sensing is selected by `use_image`.
 `use_gf_standalone_vio` is not the UF visual switch: in the current runtime it
@@ -299,7 +329,7 @@ common:
   image1_topic: /camera/aligned_depth_to_color/image_raw
 ```
 
-#### Camera intrinsic files
+#### 2.3.2 Camera intrinsic files
 
 Camera intrinsics are not stored in the main UF YAML. The main YAML points to
 camodocal/OpenCV calibration YAML files:
@@ -346,7 +376,7 @@ profiles, keep it consistent with the released template. RGB-D depth input is
 controlled by `depth: 1` and `common.image1_topic`, not by giving the depth image
 its own camera-intrinsic YAML.
 
-#### Optional GNSS fusion
+#### 2.3.3 Optional GNSS fusion
 
 GNSS is independent of the LiDAR/visual/wheel mode switches. UF estimator paths
 can add raw GNSS pseudorange/Doppler factors and position-only
@@ -379,7 +409,7 @@ position in the estimator body/IMU frame. Do not enable raw GNSS without the
 matching ephemeris topics; use position-only GNSS in a UF estimator profile or
 leave GNSS off.
 
-#### Extrinsic convention
+#### 2.3.4 Extrinsic convention
 
 All extrinsics are under `mapping`. Ultra-Fusion uses `T_A_B` to mean
 "transform a point from frame `B` into frame `A`":
@@ -411,7 +441,7 @@ There is no public YAML flag named `estimate_wheel_extrinsic`. To change the
 wheel extrinsic, provide `extrinsic_TIO/RIO` directly or provide a correct
 `extrinsic_TOL/ROL` so UF can derive `T_I_O`.
 
-#### Calibration and delay fields
+#### 2.3.5 Calibration and delay fields
 
 For fixed calibration, keep both visual online-calibration flags at zero:
 
@@ -463,35 +493,7 @@ When checking a new profile, inspect the startup log lines for `Opti_TIC`,
 `Opti_TIO`, `td`, wheel `td`, GNSS status, and LiDAR-IMU time sync. A smooth but
 biased trajectory is often a frame or time-offset error, not just solver tuning.
 
-**Demo preview (more datasets).** The GIFs below match the released shortcuts
-in the table above. Run the corresponding `uf_node` command, play the
-recommended sequence, and compare your RViz output with:
 
-<table>
-  <tr>
-    <td width="33%" align="center">
-      <img src="images/gifs/arc2_full.gif" alt="GrandTour Arc2 demo" width="100%">
-      <br>
-      <strong>GrandTour Arc2</strong> · <code>uf_node groundtour</code>
-      <br>
-      <em>Legged-platform mapping and trajectory recovery through a large arc-shaped route.</em>
-    </td>
-    <td width="33%" align="center">
-      <img src="images/gifs/kaist_full.gif" alt="KAIST urban driving demo" width="100%">
-      <br>
-      <strong>KAIST urban25/35</strong> · <code>uf_node kaist</code>
-      <br>
-      <em>Large-scale LiDAR mapping with vehicle trajectory visualization.</em>
-    </td>
-    <td width="33%" align="center">
-      <img src="images/gifs/lvig_full.gif" alt="MARS-LVIG aerial demo" width="100%">
-      <br>
-      <strong>MARS-LVIG HKairport01</strong> · <code>uf_node lvig</code>
-      <br>
-      <em>Aerial LVIO reconstruction with dense point cloud and flight trajectory.</em>
-    </td>
-  </tr>
-</table>
 
 
 
