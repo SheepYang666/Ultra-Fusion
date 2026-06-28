@@ -21,7 +21,7 @@ Ultra-Fusion is a tightly-coupled multi-sensor SLAM framework for intelligent tr
 
 Within one configurable optimization framework, Ultra-Fusion supports **WIO, VIO, LIO, and LVIO**, with optional wheel/GNSS fusion and online calibration.
 
-**Custom device (v0.1.1):** [Adapt Ultra-Fusion to your sensors](docs/visual_life_d360.md) (D360 example)
+**Custom device (v0.1.1):** [Adapt Ultra-Fusion to your sensors](docs/visual_life_d360.md) (D360 example). We are releasing new versions with demos, please stay tuned!
 
 
 ## Contents
