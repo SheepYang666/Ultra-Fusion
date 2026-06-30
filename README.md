@@ -453,29 +453,9 @@ Additional shortcuts for cross-platform reproducibility. Download rosbags first,
   </tr>
 </table>
 
-<a id="adapt-your-device"></a>
+<a id="23-ros2-humble-runtime"></a>
 
-### 2.3 Adapting Your Own Device (D360 Example)
-
-Copy the closest profile directory, set ROS topics, camera calibration, and extrinsics, then run `uf_node` with your YAML. Details: [docs/visual_life_d360.md](docs/visual_life_d360.md) (D360 = three fisheye cameras + Livox LiDAR + IMU). YAML fields: [§3](#3-custom-profiles).
-
-<p align="center">
-  <img src="images/gifs/d360_visual_life.gif" alt="Multi-camera LVIO on D360 data" width="50%">
-</p>
-
-| Step | Action |
-| --- | --- |
-| Install | v0.1.1 `.deb` from GitHub Releases |
-| Configure | `cp -a /opt/ultrafusion/config/visual_life /tmp/my_rig` — edit topics, `camera*.yaml`, `multi_camera.modules[]` |
-| Run | `uf_node visual_life` or `uf_node /path/to/config.yaml` |
-| Verify | RViz fixed frame `world`; `/result_path`, `/curr_cloud`, `/feature_reproject_cloud`, `/colored_lidar_cloud` |
-
-Multi-camera: `use_multi_camera: true` and one `multi_camera.modules[]` entry per stream.
-
-
-<a id="24-ros2-humble-runtime"></a>
-
-### 2.4 ROS2 Humble runtime
+### 2.3 ROS2 Humble runtime
 
 v0.2.0 adds a **ROS2 Humble runtime** alongside ROS1. The workflow is the same: `uf_node` + YAML profile, `ros2 bag play` (or live topics), RViz2 for visualization. **Any ROS2 dataset** works once topics match a profile — copy a released YAML, edit `common.*` fields, and launch.
 
@@ -536,11 +516,29 @@ ros2 topic echo /result_lidar_path --once --field header.frame_id
 
 Full-bag conversion, expected topics, and release checklist: [docs/ros2_humble_m3dgr.md](docs/ros2_humble_m3dgr.md).
 
+<a id="24-adapt-your-device"></a>
+
+### 2.4 Adapting Your Own Device (D360 Example)
+
+Copy the closest profile directory, set ROS topics, camera calibration, and extrinsics, then run `uf_node` with your YAML. Details: [docs/visual_life_d360.md](docs/visual_life_d360.md) (D360 = three fisheye cameras + Livox LiDAR + IMU). YAML fields: [§3](#3-custom-profiles).
+
+<p align="center">
+  <img src="images/gifs/d360_visual_life.gif" alt="Multi-camera LVIO on D360 data" width="50%">
+</p>
+
+| Step | Action |
+| --- | --- |
+| Install | v0.1.1 `.deb` from GitHub Releases |
+| Configure | `cp -a /opt/ultrafusion/config/visual_life /tmp/my_rig` — edit topics, `camera*.yaml`, `multi_camera.modules[]` |
+| Run | `uf_node visual_life` or `uf_node /path/to/config.yaml` |
+| Verify | RViz fixed frame `world`; `/result_path`, `/curr_cloud`, `/feature_reproject_cloud`, `/colored_lidar_cloud` |
+
+Multi-camera: `use_multi_camera: true` and one `multi_camera.modules[]` entry per stream.
 
 ## 3. Custom Profiles
 
 Released shortcuts are aliases to YAML files under `/opt/ultrafusion/config/`.
-To customize, **copy the closest profile directory** so camera-intrinsic files keep their relative paths. Avoid creating a minimal YAML from scratch — the runtime expects the full field set at startup. Device adaptation walkthrough: [§2.3](#adapt-your-device), [docs/visual_life_d360.md](docs/visual_life_d360.md).
+To customize, **copy the closest profile directory** so camera-intrinsic files keep their relative paths. Avoid creating a minimal YAML from scratch — the runtime expects the full field set at startup. Device adaptation walkthrough: [§2.4](#24-adapt-your-device), [docs/visual_life_d360.md](docs/visual_life_d360.md).
 
 ```bash
 WORK=/tmp/uf_config
