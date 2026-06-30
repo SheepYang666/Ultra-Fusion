@@ -35,7 +35,6 @@ More demos and releases are on the way — stay tuned.
 
 - [Overview](#overview)
   - [Our Goal](#our-goal)
-  - [Highlights](#highlights)
   - [Method Overview](#method-overview)
   - [Why Ultra-Fusion](#why-ultra-fusion)
   - [Benchmarks and Findings](#benchmarks-and-findings)
@@ -66,16 +65,9 @@ More demos and releases are on the way — stay tuned.
 
 We aim to provide a **foundational SLAM system** for the community: one configurable framework that **unifies sensor setups and platforms** (wheeled, legged, aerial), and stays **ultra-resilient** under sensor degradation, timing delays, and extrinsic calibration errors — instead of a pipeline limited to one robot or one sensor stack.
 
-### Highlights
 
-- Unified sliding-window estimator with timestamp-ordered heterogeneous factors.
-- Observability-aware initialization for robust bootstrap under diverse motion/sensor conditions.
-- Factor-wise reliability scheduling (FRS) to gate/down-weight degraded measurements.
-- Online LiDAR-IMU spatiotemporal calibration during operation.
-- **ROS1 (Noetic) and ROS2 (Humble) runtimes** — same `uf_node` + YAML workflow on Ubuntu 20.04 / 22.04.
-- Validated on wheeled, legged, and aerial platforms across multiple public benchmarks.
 
-**See the [project website](https://sjtuyinjie.github.io/ultrafusion-web/) for videos, benchmark tables, and interactive demos!**
+
 
 ### Method Overview
 
@@ -98,6 +90,7 @@ Compared with pipelines tied to a fixed sensor set, Ultra-Fusion focuses on:
 4. **Transferability** — validated on wheeled, legged, and aerial platforms.
 5. **Dual middleware** — ROS1 (Noetic) and ROS2 (Humble) runtimes share the same YAML-driven `uf_node` workflow.
 
+
 ---
 
 
@@ -113,6 +106,8 @@ Ultra-Fusion is evaluated on five public benchmarks:
 - [**MARS-LVIG**](https://mars.hku.hk/dataset.html) — aerial LVIG fusion
 
 Reported gains include competitive accuracy and improved localization availability under sensor degradation, calibration perturbation, and long-duration / high-speed operation.
+
+**See the [project website](https://sjtuyinjie.github.io/ultrafusion-web/) for videos, benchmark tables, and interactive demos!**
 
 > [!NOTE]
 > This repository currently releases **executable binaries and demos**. Full source code will be released after paper acceptance. For related implementations, see [Ground-Fusion](https://github.com/SJTU-ViSYS/Ground-Fusion) and [Ground-Fusion++](https://github.com/sjtuyinjie/Ground-Fusion2).
